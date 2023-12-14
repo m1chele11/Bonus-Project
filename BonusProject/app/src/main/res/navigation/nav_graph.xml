@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="edu.iu.mbarrant.bonusproject.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/reminderslist">
+        <!-- Other fragment attributes -->
+
+        <action
+            android:id="@+id/action_current_to_reminder"
+            app:destination="@id/editReminder" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reminderFragment"
+        android:name="edu.iu.mbarrant.bonusproject.EditReminderFragment"
+        android:label="Reminder Fragment"
+        tools:layout="@layout/reminder_item">
+        <!-- Other fragment attributes -->
+    </fragment>
+
+    <fragment
+        android:id="@+id/editReminder"
+        android:name="edu.iu.mbarrant.bonusproject.EditReminderFragment"
+        android:label="Edit Reminder Fragment"
+        tools:layout="@layout/edit_reminder">
+        <!-- Other fragment attributes -->
+
+        <action
+            android:id="@+id/backToList"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+</navigation>
